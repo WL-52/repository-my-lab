@@ -1,0 +1,4 @@
+pong
+*.o
+*.dSYM/
+.DS_Store

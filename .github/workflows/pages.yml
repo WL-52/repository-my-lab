@@ -1,0 +1,60 @@
+name: Deploy portfolio site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare site directory
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          # Корневой redirect и сам портфолио
+          cp index.html _site/
+          cp -r "Web-Site" _site/Web-Site
+          # Соседние разделы — чтобы ссылки в портфолио "../HTML" и т.д. работали
+          [ -d HTML ]            && cp -r HTML            _site/HTML
+          [ -d "C++" ]           && cp -r "C++"           _site/C++
+          [ -d python-labs ]     && cp -r python-labs     _site/python-labs
+          [ -d ping-pong-cpp ]   && cp -r ping-pong-cpp   _site/ping-pong-cpp
+          [ -d telegram-bot ]    && cp -r telegram-bot    _site/telegram-bot
+          # На всякий случай удаляем артефакты сборки и приватные файлы
+          find _site -name '*.o'            -delete || true
+          find _site -name '__pycache__'    -type d -exec rm -rf {} + || true
+          find _site -name '.env'           -delete || true
+          find _site -name 'submissions.json' -delete || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

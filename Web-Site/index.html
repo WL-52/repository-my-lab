@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ожигов Сергей — портфолио</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero__inner">
+      <img class="hero__photo" src="assets/photo.jpg" alt="Ожигов Сергей">
+      <div>
+        <p class="hero__eyebrow">Программист / Разработчик</p>
+        <h1 class="hero__name">Ожигов Сергей</h1>
+        <p class="hero__tagline">Студент Московского колледжа деловой карьеры по специальности «Информационные технологии и программирование». Изучаю C++, Python, веб-разработку.</p>
+        <div class="hero__meta">
+          <span>📍 Москва</span>
+          <span>🎂 18 лет</span>
+          <span>🇷🇺 Россия</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:serega1234598765@gmail.com">Написать на почту</a>
+          <a class="btn" href="tel:+79647281595">+7 (964) 728-15-95</a>
+          <a class="btn" href="resume.html">Резюме (RU/EN)</a>
+          <a class="btn" href="#projects">Проекты</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="topnav">
+    <div class="container topnav__inner">
+      <a href="#about">Обо мне</a>
+      <a href="#skills">Навыки</a>
+      <a href="#education">Образование</a>
+      <a href="#projects">Проекты</a>
+      <a href="#contact">Контакты</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section id="about" class="section">
+      <h2 class="section__title">Обо мне</h2>
+      <p>Я — студент 2 курса Московского колледжа деловой карьеры, специальность «Информационные технологии и программирование». Учусь с 2024 по 2028 год. Активно изучаю программирование на C++ и Python, основы веб-разработки. Совмещаю учёбу с работой.
+      <p>Этот сайт — моё портфолио к диффзачёту по «Основам алгоритмизации и программированию». Все проекты, лабораторные работы и резюме собраны здесь и доступны в репозитории на GitHub.</p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section__title">Навыки</h2>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>Языки программирования</h3>
+          <ul class="tag-list">
+            <li>Python</li>
+            <li>C++ (базовый)</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Инструменты</h3>
+          <ul class="tag-list">
+            <li>Git / GitHub</li>
+            <li>VS Code</li>
+            <li>Microsoft Office</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Soft skills</h3>
+          <ul class="tag-list">
+            <li>Коммуникабельность</li>
+            <li>Стрессоустойчивость</li>
+            <li>Многозадачность</li>
+            <li>Быстрая обучаемость</li>
+            <li>Ответственность</li>
+            <li>Пунктуальность</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section__title">Образование</h2>
+      <div class="card">
+        <h3>Московский колледж деловой карьеры</h3>
+        <p class="muted">2024 — 2028 · Москва</p>
+        <p>Специальность: <b>«Информационные технологии и программирование»</b>.</p>
+      </div>
+
+      <div class="card">
+        <h3>Опыт работы</h3>
+        <p class="muted">3 месяца · Бармен</p>
+        <p>«Домик в саду, нескучный сад»</p>
+        <p class="muted">Обязанности:</p>
+        <ul class="muted-list">
+          <li>Работа с гостями</li>
+          <li>Приготовление напитков</li>
+          <li>Работа с кассой</li>
+          <li>Учёт товара</li>
+          <li>Поддержание чистоты</li>
+        </ul>
+      </div>
+
+      <h3 class="subtle">Языки</h3>
+      <div class="grid grid--2">
+        <div class="card">
+          <h4>Русский</h4>
+          <p>Родной</p>
+        </div>
+        <div class="card">
+          <h4>Английский</h4>
+          <p>B1 (intermediate)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section__title">Проекты</h2>
+      <div class="grid grid--2">
+        <a class="card card--link" href="../ping-pong-cpp/">
+          <h3>Ping Pong (C++ / ncurses)</h3>
+          <p>Классическая аркадная игра в терминале. Режимы PvP и PvAI, физика отскоков, счёт до 7. Собирается одной командой <code>make</code>.</p>
+          <p class="muted">C++17 · ncurses · Makefile</p>
+        </a>
+
+        <a class="card card--link" href="../telegram-bot/">
+          <h3>Telegram-бот «Сдача ДЗ»</h3>
+          <p>Бот для колледжа: студент в один диалог сдаёт домашнюю работу преподавателю — выбор предмета, комментарий, файл, подтверждение, авто-уведомление преподу.</p>
+          <p class="muted">Python · python-telegram-bot 21 · ConversationHandler</p>
+        </a>
+
+        <a class="card card--link" href="../HTML/index.html">
+          <h3>17 практических работ по HTML</h3>
+          <p>Полный набор учебных HTML-страниц: от тегов BR/P/FONT до таблиц и гиперссылок. Есть навигация и итоговый мини-сайт.</p>
+          <p class="muted">HTML · CSS</p>
+        </a>
+
+        <a class="card card--link" href="../C++/">
+          <h3>7 лабораторных работ по C++</h3>
+          <p>Линейные алгоритмы, ветвление, циклы, массивы, указатели, строки, функции. Все собираются одним <code>make</code>.</p>
+          <p class="muted">C++17 · Makefile</p>
+        </a>
+
+        <a class="card card--link" href="../python-labs/">
+          <h3>6 лабораторных работ по Python</h3>
+          <p>ANSI-вывод, CSV/XML, Tkinter-keygen, задача о рюкзаке (DP), регулярные выражения, ООП.</p>
+          <p class="muted">Python 3.10+ · stdlib only</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="labs" class="section">
+      <h2 class="section__title">Лабораторные работы</h2>
+      <p>Полная навигация — в корневом <a href="https://github.com/udinvlad44-cmd/exam_Udinvlad">README.md репозитория</a>.</p>
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>C++ (7)</h3>
+          <ol class="muted-list">
+            <li>Линейные алгоритмы</li>
+            <li>Ветвление</li>
+            <li>Итерационные циклы</li>
+            <li>Цикл for + массив</li>
+            <li>2D-массив + указатели</li>
+            <li>Строки</li>
+            <li>Функции</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>Python (6)</h3>
+          <ol class="muted-list">
+            <li>ANSI и вывод в консоль</li>
+            <li>CSV / XML</li>
+            <li>Tkinter (keygen)</li>
+            <li>Задача о рюкзаке</li>
+            <li>Регулярные выражения</li>
+            <li>ООП</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>HTML (17)</h3>
+          <p class="muted">От тегов BR и FONT до таблиц, гиперссылок и итогового мини-сайта.</p>
+          <p><a href="../html-tasks/index.html">Открыть оглавление →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section__title">Контакты</h2>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>Основные</h3>
+          <ul class="contact-list">
+            <li>📧 <a href="mailto:serega1234598765@gmail.com">serega1234598765@gmail.com</a></li>
+            <li>📞 <a href="tel:+79647281595">+7 (964) 728-15-95</a></li>
+            <li>📍 Москва, Россия</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Профили</h3>
+          <ul class="contact-list">
+            <li><a href="https://github.com/udinvlad44-cmd">GitHub</a></li>
+            <li>📄 <a href="resume.html">Резюме (RU / EN)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Ожигов Сергей · Учебное портфолио к диффзачёту</p>
+    </div>
+  </footer>
+</body>
+</html>

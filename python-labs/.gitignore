@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+lab1/sequence.txt
+lab2/books.csv
+lab2/currency.xml
+lab2/bibliography.txt
+lab5/report.txt

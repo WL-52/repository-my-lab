@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# C++
+*.o
+*.dSYM/
+ping-pong-cpp/pong
+cpp-labs/lab*/lab
+
+# Tooling artefacts (служебная папка с распакованным текстом методичек)
+.extracted/
+
+# Bot secrets
+telegram-bot/.env
+telegram-bot/submissions.json
+
+# Lab runtime files
+python-labs/lab1/sequence.txt
+python-labs/lab2/books.csv
+python-labs/lab2/currency.xml
+python-labs/lab2/bibliography.txt
+python-labs/lab5/report.txt
+
+# Editor
+.idea/
+.vscode/

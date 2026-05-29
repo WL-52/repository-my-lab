@@ -1,0 +1,55 @@
+name: Build C++ projects
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ping-pong-cpp/**'
+      - 'cpp-labs/**'
+      - '.github/workflows/cpp.yml'
+  pull_request:
+    paths:
+      - 'ping-pong-cpp/**'
+      - 'cpp-labs/**'
+      - '.github/workflows/cpp.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libncurses-dev
+
+      - name: Build Ping Pong
+        working-directory: ping-pong-cpp
+        run: make
+
+      - name: Build all C++ labs
+        working-directory: cpp-labs
+        run: make
+
+      - name: Smoke-test labs (no-tty)
+        working-directory: cpp-labs
+        run: |
+          set -e
+          echo "1.5 2.3" | ./lab1/lab
+          printf "5\n3 4\n" | ./lab2/lab
+          echo "1e-5"   | ./lab3/lab
+          echo "-3 0 5 -1 2 0 7 -8 4 0 6 -2 9 -5 1" | ./lab4/lab
+          printf "2 3\n1 -2 3\n-1 4 -5\n" | ./lab5/lab
+          echo "hello world programming lab"        | ./lab6/lab
+          echo "10 3"   | ./lab7/lab
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: cpp-binaries-linux
+          path: |
+            ping-pong-cpp/pong
+            cpp-labs/lab*/lab
+          if-no-files-found: error

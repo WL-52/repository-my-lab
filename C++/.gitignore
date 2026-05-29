@@ -1,0 +1,4 @@
+*/lab
+*.o
+*.dSYM/
+.DS_Store
